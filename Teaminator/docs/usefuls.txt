@@ -1,0 +1,2 @@
+# Twitter request:
+https://api.twitter.com/1.1/users/show.json?screen_name={screen_name}
