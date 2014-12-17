@@ -1,0 +1,122 @@
+body {
+  background-color: #123456; }
+
+.santa__hat {
+  border-bottom: 100px solid red;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  height: 0;
+  position: relative;
+  width: 0;
+  z-index: 2; }
+  .santa__hat:after {
+    background: white;
+    border-radius: 5px;
+    content: '';
+    display: block;
+    height: 30px;
+    left: -55px;
+    position: absolute;
+    top: 80px;
+    width: 110px; }
+
+.santa__bauble {
+  background-color: white;
+  border-radius: 100%;
+  height: 20px;
+  position: absolute;
+  right: -34px;
+  top: 10px;
+  transform: rotate(-70deg);
+  width: 20px;
+  z-index: 10; }
+  .santa__bauble:before {
+    border-top: 20px solid red;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: '';
+    height: 0;
+    position: relative;
+    top: 2px;
+    width: 0;
+    z-index: 0; }
+
+.santa__head {
+  background: #d0b395;
+  border-radius: 90px/80px;
+  height: 120px;
+  margin-top: -30px;
+  position: relative;
+  width: 100px; }
+
+.santa__ear--left, .santa__ear--right {
+  background: #c8a683;
+  border-radius: 10px;
+  height: 25px;
+  position: absolute;
+  top: 45px;
+  width: 10px; }
+
+.santa__ear--left {
+  left: -5px; }
+
+.santa__ear--right {
+  right: -5px; }
+
+.santa__face {
+  position: relative; }
+
+.santa__eye--left, .santa__eye--right {
+  background: black;
+  border-radius: 100%;
+  height: 10px;
+  position: absolute;
+  top: 55px;
+  width: 10px; }
+
+.santa__eye--left {
+  left: 35px; }
+
+.santa__eye--right {
+  right: 35px; }
+
+.santa__nose {
+  background: #d0b395;
+  border-radius: 5px;
+  border-bottom: 1px solid #c09a72;
+  border-left: 1px solid #c09a72;
+  left: 50%;
+  margin-left: -6px;
+  height: 10px;
+  transform: rotate(-42deg);
+  top: 85px;
+  position: absolute;
+  width: 10px;
+  z-index: 10; }
+
+.santa__beard {
+  border: 10px solid white;
+  border-radius: 90px/80px;
+  height: 100px;
+  margin-top: -30px;
+  width: 80px;
+  position: relative; }
+  .santa__beard:after {
+    background: white;
+    border-radius: 20px/10px;
+    bottom: -10px;
+    content: '';
+    height: 25px;
+    left: 15px;
+    width: 50px;
+    position: absolute; }
+
+.santa__mouth {
+  border-bottom: 1px solid black;
+  left: 50%;
+  margin-left: -6px;
+  height: 10px;
+  top: 85px;
+  position: absolute;
+  width: 10px;
+  z-index: 10; }

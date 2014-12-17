@@ -1,0 +1,160 @@
+$red: #F00;
+$white: #FFF;
+$black: #000;
+$face: #D0B395;
+$bg: #123456;
+
+body {
+  background-color: $bg;
+}
+
+.santa__hat {
+  border: {
+    bottom: 100px solid $red;
+    left: 50px solid transparent;
+    right: 50px solid transparent;
+  }
+  height: 0;
+  position: relative;
+  width: 0;
+  z-index: 2;
+
+  &:after {
+    background: $white;
+    border-radius: 5px;
+    content: '';
+    display: block;
+    height: 30px;
+    left: -55px;
+    position: absolute;
+    top: 80px;
+    width: 110px;
+  }
+}
+
+.santa__bauble {
+  background-color: $white;
+  border-radius: 100%;
+  height: 20px;
+  position: absolute;
+  right: -34px;
+  top: 10px;
+  transform: rotate(-70deg);
+  width: 20px;
+  z-index: 10;
+
+  &:before {
+    border: {
+      top: 20px solid $red;
+      left: 10px solid transparent;
+      right: 10px solid transparent;
+    }
+    content: '';
+    height: 0;
+    position: relative;
+    top: 2px;
+    width: 0;
+    z-index: 0;
+  }
+}
+
+.santa__head {
+  background: $face;
+  border-radius: 90px/80px;
+  height: 120px;
+  margin-top: -30px;
+  position: relative;
+  width: 100px;
+}
+
+%santa__ear {
+  background: darken($face, 5);
+  border-radius: 10px;
+  height: 25px;
+  position: absolute;
+  top: 45px;
+  width: 10px;
+}
+
+.santa__ear--left {
+  @extend %santa__ear;
+  left: -5px;
+}
+
+.santa__ear--right {
+  @extend %santa__ear;
+  right: -5px;
+}
+
+.santa__face {
+  position: relative;
+}
+
+%santa__eye {
+  background: $black;
+  border-radius: 100%;
+  height: 10px;
+  position: absolute;
+  top: 55px;
+  width: 10px;
+}
+
+.santa__eye--left {
+  @extend %santa__eye;
+  left: 35px;
+}
+
+.santa__eye--right {
+  @extend %santa__eye;
+  right: 35px;
+}
+
+.santa__nose {
+  background: $face;
+  border-radius: 5px;
+  border: {
+    bottom:  1px solid darken($face, 10);
+    left:  1px solid darken($face, 10);
+  };
+  left: 50%;
+  margin-left: -6px;
+  height: 10px;
+  transform: rotate(-42deg);
+  top: 85px;
+  position: absolute;
+  width: 10px;
+  z-index: 10;
+}
+
+.santa__beard {
+  border: 10px solid $white;
+  border-radius: 90px/80px;
+  height: 100px;
+  margin-top: -30px;
+  width: 80px;
+  position: relative;
+
+  &:after {
+    background: $white;
+    border-radius: 20px/10px;
+    bottom: -10px;
+    content: '';
+    height: 25px;
+    left: 15px;
+    width: 50px;
+    position: absolute;
+  }
+}
+
+.santa__mouth {
+  border: {
+    bottom: 1px solid $black;
+  };
+  left: 50%;
+  margin-left: -6px;
+  height: 10px;
+  top: 85px;
+  position: absolute;
+  width: 10px;
+  z-index: 10;
+}
