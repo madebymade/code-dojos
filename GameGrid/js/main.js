@@ -1,34 +1,35 @@
 $(document).ready(function () {
   var canvas = document.getElementById("game-grid"),
       context = canvas.getContext("2d"),
+      world = createWorld(25, 25),
       player = {'x': 0, 'y': 0};
 
-  drawWorld(context, player);
+  drawWorld(context, player, world);
 
   $(window).keydown(function (e) {
     switch (e.which) {
       case 37: // left
       case 97: // a
-        player = moveLeft(player);
+        player = moveLeft(world, player);
         break;
 
       case 38: // up
       case 119: // w
-        player = moveUp(player);
+        player = moveUp(world, player);
         break;
 
       case 39: // right
       case 100: // d
-        player = moveRight(player);
+        player = moveRight(world, player);
         break;
 
       case 40: // down
       case 115: // s
-        player = moveDown(player);
+        player = moveDown(world, player);
         break;
     }
 
-    drawWorld(context, player);
+    drawWorld(context, player, world);
   });
 });
 
