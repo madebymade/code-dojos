@@ -15,11 +15,14 @@
 
 - Add obstacles/barriers/walls.
 
+
+# Made Game Grid - Part 3
+
+- Fix broken boundaries
+
 - Add collectible items that update a score when the player picks them up.
 
 - Add a "win" tile that triggers a Game Over (success) event when the player reaches it.
-
-### If we ace that
 
 - Add the concept of "lives" to the player, and have the player start with three. If they lose one life, they go back to the start of the grid, if they lose all lives a Game Over (failure) event is triggered.
 
