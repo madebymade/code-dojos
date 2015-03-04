@@ -80,12 +80,12 @@ function canMove(world, player, x, y) {
   world_tile_x = player.x + x;
   world_tile_y = player.y + y;
 
-  if (isObstacle(world, world_tile_x, world_tile_y)) {
-    return false;
-  } else if (isOutsideBoundary(world, world_tile_x, world_tile_y)) {
+  if (isOutsideBoundary(world, world_tile_x, world_tile_y)) {
     return false;
   }
-
+  if (isObstacle(world, world_tile_x, world_tile_y)) {
+    return false;
+  }
   return true;
 }
 
@@ -98,11 +98,11 @@ function isOutsideBoundary(world, x, y) {
     return true;
   }
 
-  if(y > world.length) {
+  if(y >= world.length) {
     return true;
   }
 
-  if(x > world[y].length) {
+  if(x >= world[y].length) {
     return true;
   }
 
