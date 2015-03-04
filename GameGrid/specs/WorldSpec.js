@@ -16,4 +16,17 @@ describe("Player", function() {
       expect(canMove(world, player, 26, 0)).toEqual(false);
     });
   });
+
+  describe("RandomPositionsInWorld", function() {
+    it("generates 10 random positions", function() {
+      expect(RandomPositionsInWorld(10, 10, 1).length).toEqual(1)
+    });
+
+    it("returns positions within the x and y coordinates", function() {
+      result = RandomPositionsInWorld(10, 10, 1)
+      first_result = result[0];
+      expect(first_result.x).toBeLessThan(10);
+    })
+  });
+
 });

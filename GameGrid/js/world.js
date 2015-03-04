@@ -120,3 +120,16 @@ function moveUp(world, player) { return move(world, player, 0, -1); }
 function moveRight(world, player) { return move(world, player, 1, 0); }
 
 function moveDown(world, player) { return move(world, player, 0, 1); }
+
+function RandomPositionsInWorld(x, y, count) {
+  return [
+    {
+      x: 5,
+      y: 6
+    }
+  ];
+}
+
+function RandomTileGenerator(world, tile_type, amount) {
+
+}
