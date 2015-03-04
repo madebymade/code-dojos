@@ -2,12 +2,17 @@ describe("Player", function() {
   var player;
 
   beforeEach(function() {
-    player = {'x': 0, 'y': 0}
+    world = createWorld(25, 25),
+    player = {'x': 0, 'y': 0};
   });
 
-  describe("moving", function() {
-    it("to the right", function() {
-      expect(moveRight(player)).toEqual({'x': 32, 'y': 0});
+  describe("ContstrainBoundaries", function() {
+    it("allows player to move to valid tile", function() {
+      expect(canMove(world, player, 1, 0)).toEqual(true);
+    });
+
+    it("prevents player from moving outside of boundary", function() {
+      expect(canMove(world, player, -1, 0)).toEqual(false);
     });
   });
 });

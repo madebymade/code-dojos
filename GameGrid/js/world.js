@@ -77,11 +77,26 @@ function constrainBoundaries(world, player, x, y) {
 }
 
 function canMove(world, player, x, y) {
-  if (world[player.y + y][player.x + x] == 1) {
-    return false
+  world_tile_x = player.x + x;
+  world_tile_y = player.y + y;
+
+  if (isObstacle(world, world_tile_x, world_tile_y)) {
+    return false;
+  } else if (isOutsideBoundary(world, world_tile_x, world_tile_y)) {
+    return false;
   }
 
-  return true
+  return true;
+}
+
+function isObstacle(world, x, y) {
+  return world[y][x] == 1;
+}
+
+function isOutsideBoundary(world, x, y) {
+  if(x < 0) {
+    return true;
+  }
 }
 
 function move(world, player, xDelta, yDelta) {
