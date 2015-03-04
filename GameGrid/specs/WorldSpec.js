@@ -11,8 +11,9 @@ describe("Player", function() {
       expect(canMove(world, player, 1, 0)).toEqual(true);
     });
 
-    it("prevents player from moving outside of boundary", function() {
+    it("prevents player from moving to an invalid position", function() {
       expect(canMove(world, player, -1, 0)).toEqual(false);
+      expect(canMove(world, player, 26, 0)).toEqual(false);
     });
   });
 });

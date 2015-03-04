@@ -94,9 +94,19 @@ function isObstacle(world, x, y) {
 }
 
 function isOutsideBoundary(world, x, y) {
-  if(x < 0) {
+  if(x < 0 || y < 0) {
     return true;
   }
+
+  if(y > world.length) {
+    return true;
+  }
+
+  if(x > world[y].length) {
+    return true;
+  }
+
+  return false;
 }
 
 function move(world, player, xDelta, yDelta) {
