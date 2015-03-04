@@ -1,4 +1,4 @@
-# Made Game Grid - Part 1
+# Made Game Grid - Part 1 (2014)
 
 - Create a 3x3 grid with boundaries all the way around it that the player avatar cannot cross.
 
@@ -9,21 +9,35 @@
 - Do the above without using a game engine (i.e. no [Phaser.js](http://phaser.io), [Crafty.js](http://craftyjs.com) or [Pixi.js](http://www.pixijs.com/))
 
 
-# Made Game Grid - Part 2
+# Part 2 (18/02/2015)
 
 - Create a larger grid.
-
 - Add obstacles/barriers/walls.
 
 
-# Made Game Grid - Part 3
+# Part 3 (04/02/2015)
 
 - Fix broken boundaries
+
+
+# Part 4 (tbd)
+
+## Holdovers from previous dojos
+
+- Randomly generate obstacles
+
+## New features
 
 - Add collectible items that update a score when the player picks them up.
 
 - Add a "win" tile that triggers a Game Over (success) event when the player reaches it.
 
-- Add the concept of "lives" to the player, and have the player start with three. If they lose one life, they go back to the start of the grid, if they lose all lives a Game Over (failure) event is triggered.
+- Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player).
 
-- Add enemies that chase the player to a certain degree and take one of the player's lives if it comes into contact.
+- Add the concept of "lives" to the player, and have the player start with three. A player loses a life if an enemy occupies the same square as they player.
+
+- If they lose one life, they go back to the start of the grid, if they lose all lives a Game Over (failure) event is triggered.
+
+## Somewhere down the line
+
+- Have the world builder generate a random maze, and have it be intelligent enough to ensure there are multiple pathways to the win tile.
