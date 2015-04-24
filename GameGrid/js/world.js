@@ -10,6 +10,10 @@ function createWorld(width, height){
   return placeRandomWorldObstacles(world);
 }
 
+function createPlayer() {
+  return {'x': 0, 'y': 0, 'score': 1};
+}
+
 function randomCoordinate(axis) {
   return Math.floor(Math.random() * window.cell_count[axis]);
 }

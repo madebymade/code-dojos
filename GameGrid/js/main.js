@@ -2,7 +2,7 @@ $(document).ready(function () {
   var canvas = document.getElementById("game-grid"),
       context = canvas.getContext("2d"),
       world = createWorld(25, 25),
-      player = {'x': 0, 'y': 0};
+      player = new Player();
 
   drawWorld(context, player, world);
 

@@ -3,7 +3,7 @@ describe("Player", function() {
 
   beforeEach(function() {
     world = createWorld(25, 25),
-    player = {'x': 0, 'y': 0};
+    player = createPlayer();
   });
 
   describe("ContstrainBoundaries", function() {
@@ -26,7 +26,11 @@ describe("Player", function() {
       result = RandomPositionsInWorld(10)
       first_result = result[0];
       expect(first_result.x).toBeLessThan(world.length);
-    })
+    });
+
+    it("collects a collectable item", function() {
+      expect(player.score).toEqual(1);
+    });
   });
 
 });
