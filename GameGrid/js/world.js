@@ -7,11 +7,18 @@ function createWorld(width, height){
     world.push(new Array(width));
   }
 
-  world[5][6] = 1;
-  world[6][9] = 1;
-  world[21][6] = 1;
-  world[14][8] = 1;
-  world[8][16] = 1;
+  return placeRandomWorldObstacles(world);
+}
+
+function randomCoordinate(axis) {
+  return Math.floor(Math.random() * window.cell_count[axis]);
+}
+
+function placeRandomWorldObstacles(world) {
+  positions = RandomPositionsInWorld(10, 1);
+  for (var i = 0; i < positions.length; i++) {
+    world[positions[i]['y']][positions[i]['x']] = 1;
+  }
 
   return world;
 }
@@ -121,13 +128,12 @@ function moveRight(world, player) { return move(world, player, 1, 0); }
 
 function moveDown(world, player) { return move(world, player, 0, 1); }
 
-function RandomPositionsInWorld(x, y, count) {
-  return [
-    {
-      x: 5,
-      y: 6
-    }
-  ];
+function RandomPositionsInWorld(limit) {
+  var coords = new Array();
+  for (var i = 0; i < limit; i++) {
+    coords.push({ x: randomCoordinate('x'), y: randomCoordinate('y') });
+  }
+  return coords;
 }
 
 function RandomTileGenerator(world, tile_type, amount) {

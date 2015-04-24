@@ -19,13 +19,13 @@ describe("Player", function() {
 
   describe("RandomPositionsInWorld", function() {
     it("generates 10 random positions", function() {
-      expect(RandomPositionsInWorld(10, 10, 1).length).toEqual(1)
+      expect(RandomPositionsInWorld(10).length).toEqual(10)
     });
 
     it("returns positions within the x and y coordinates", function() {
-      result = RandomPositionsInWorld(10, 10, 1)
+      result = RandomPositionsInWorld(10)
       first_result = result[0];
-      expect(first_result.x).toBeLessThan(10);
+      expect(first_result.x).toBeLessThan(world.length);
     })
   });
 
