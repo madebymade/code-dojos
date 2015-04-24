@@ -7,11 +7,8 @@ function createWorld(width, height){
     world.push(new Array(width));
   }
 
-  return placeRandomWorldObstacles(world);
-}
-
-function createPlayer() {
-  return {'x': 0, 'y': 0, 'score': 1};
+  world = placeRandomWorldObstacles(world);
+  return placeRandomWorldCollectables(world);
 }
 
 function randomCoordinate(axis) {
@@ -22,6 +19,15 @@ function placeRandomWorldObstacles(world) {
   positions = RandomPositionsInWorld(10, 1);
   for (var i = 0; i < positions.length; i++) {
     world[positions[i]['y']][positions[i]['x']] = 1;
+  }
+
+  return world;
+}
+
+function placeRandomWorldCollectables(world) {
+  positions = RandomPositionsInWorld(10, 1);
+  for (var i = 0; i < positions.length; i++) {
+    world[positions[i]['y']][positions[i]['x']] = 2;
   }
 
   return world;
@@ -51,6 +57,9 @@ function drawWorld(context, player, world) {
         case 1:
           drawObstacleCell(context, x, y);
           break;
+        case 2:
+          drawCollectableCell(context, x, y);
+          break;
         default:
           drawBackgroundCell(context, x, y);
       }
@@ -68,6 +77,10 @@ function drawObstacleCell(context, x, y) {
   drawCell(context, x, y, "#FF0000");
 }
 
+function drawCollectableCell(context, x, y) {
+  drawCell(context, x, y, "#0000FF");
+}
+
 function drawCell(context, x, y, color) {
 
   context.fillStyle = color;
@@ -81,10 +94,10 @@ function drawCell(context, x, y, color) {
 
 function constrainBoundaries(world, player, x, y) {
   if(canMove(world, player, x, y)) {
-    return { 'x': player.x + x, 'y': player.y + y };
-  } else {
-    return player;
+    player.move(x, y);
   }
+
+  return player;
 }
 
 function canMove(world, player, x, y) {
