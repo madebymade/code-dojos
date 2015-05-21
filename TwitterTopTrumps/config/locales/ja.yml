@@ -1,0 +1,57 @@
+﻿ja:
+  languages:
+    ar: 'アラビア語'
+    en: '英語'
+    fr: 'フランス語'
+    ja: '日本人'
+    zh: '中国人'
+  http_challenge: 'アクセス制限'
+  branding:
+    header:
+      cdp: 'CDP'
+  primary_navigation:
+    areas_of_focus: '活動内容'
+    why_disclose: 'なぜ開示するのか?'
+    member_benefits: 'メンバーの利益'
+    data_and_reports: 'データ及びレポート'
+  secondary_navigation:
+    donate: '寄付'
+    language: '言語'
+    contact: '連絡先'
+  helpers:
+    label:
+      user:
+        email: 'メール'
+        first_name: 'ファーストネーム'
+        last_name: '苗字'
+  cdp2:
+    homepage: 'CDP2を開く'
+  users:
+    login: 'サインイン'
+    logout: 'サインアウト'
+    sign_up: '登録'
+    update_details: '新着情報'
+    new_password: '新しいパスワード'
+    confirm_new_password: '新しいパスワードの確認'
+    change_password: 'パスワードの変更'
+    password: 'パスワード'
+    send_reset_password_instructions: 'パスワード変更方法の送信'
+    resend_confirmation_instructions: '確認方法の再送'
+    resend_unlock_instructions: 'ロック解除方法の再送'
+    confirm_account: 'アカウントの確認'
+    unlock_account: 'アカウントのロック解除'
+    forgotten_password: 'パスワードを忘れましたか?'
+    resend_confirmation_instructions_link: "確認方法のメールは受け取っていませんか?"
+    resend_unlock_instructions_link: "ロック解除方法の芽瑠は受け取っていませんか?"
+    login_oauth: '%{provider} からサインインしてください'
+    password_minimum: '最低 %{min} 文字'
+    edit_details: '編集'
+    forgot_password: 'パスワードを忘れましたか?'
+  home:
+    title: 'CDPへようこそ'
+    current_environment: '%{env} です。'
+  active_directory:
+    user: 'ActiveDirectory情報'
+  ssrs:
+    heading: 'SSRSレポート'
+    example_report: 'レポート例'

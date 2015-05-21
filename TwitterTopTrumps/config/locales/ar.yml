@@ -1,0 +1,59 @@
+ar:
+  languages:
+    ar: 'العربية'
+    en: 'الإنجليزية'
+    fr: 'اللغة الفرنسية'
+    ja: 'اليابانية'
+    zh: 'الصينية'
+  http_challenge: 'Restricted Access'
+  branding:
+    header:
+      cdp: 'CDP'
+  primary_navigation:
+    our_issues: 'قضايانا'
+    join_us: 'انضم إلينا'
+    support_us: 'دعم لنا'
+    our_research: 'أبحاثنا'
+  secondary_navigation:
+    donate: 'تبرع'
+    language: 'لغة'
+    contact: 'اتصال'
+    sign_in: 'تسجيل الدخول'
+    sign_out: 'تسجيل الخروج'
+  cdp2:
+    homepage: 'زيارة CDP2'
+  helpers:
+    label:
+      user:
+        email: 'البريد الإلكتروني'
+        first_name: 'الاسم الاول'
+        last_name: 'اسم العائلة'
+  users:
+    login: 'Sign in'
+    logout: 'Sign out'
+    sign_up: 'Sign up'
+    update_details: 'Update details'
+    new_password: 'New password'
+    confirm_new_password: 'Confirm new password'
+    change_password: 'Change password'
+    password: 'Password'
+    send_reset_password_instructions: 'Send reset password instructions'
+    resend_confirmation_instructions: 'Resend confirmation instructions'
+    resend_unlock_instructions: 'Resend unlock account instructions'
+    confirm_account: 'Confirm my account'
+    unlock_account: 'Unlock my account'
+    forgotten_password: 'Forgotten your password?'
+    resend_confirmation_instructions_link: "Didn't receive confirmation instructions?"
+    resend_unlock_instructions_link: "Didn't receive unlock instructions?"
+    login_oauth: 'Sign in with %{provider}'
+    password_minimum: '%{min} characters minimum'
+    edit_details: 'Edit Details'
+    forgot_password: 'Forgot Password?'
+  home:
+    title: 'مرحبا بكم في CDP'
+    current_environment: 'كنت في %{env}.'
+  active_directory:
+    user: 'ActiveDirectory معلومات'
+  ssrs:
+    heading: 'SSRS تقارير'
+    example_report: 'تقرير سبيل المثال'

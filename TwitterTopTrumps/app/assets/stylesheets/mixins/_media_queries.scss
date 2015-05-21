@@ -1,0 +1,8 @@
+@import 'vars/breakpoints';
+@import 'susy';
+
+@mixin respond($direction, $device) {
+  $query: map-get(map-get($breakpoints, $direction), $device);
+
+  @include susy-breakpoint($query, standard, '.no-mq') { @content; }
+}

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$1" ]; then
+  echo 'Provide an environment to deploy'
+  exit 1
+fi
+
+echo "Deploying $1"
+export RAILS_ENV=$1
+export CF_HOME=
+
+/usr/local/rbenv/shims/bundle install --without development test
+/usr/local/rbenv/shims/bundle exec rake cf:deploy:$1

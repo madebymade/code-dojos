@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+/usr/local/rbenv/shims/bundle install --without development test
+/usr/local/rbenv/shims/bundle exec rake cf:deploy:production:flip
+/usr/local/rbenv/shims/bundle exec rake cf:deploy:production:stop_idle

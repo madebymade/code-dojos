@@ -1,0 +1,28 @@
+@import 'mixins/media_queries';
+@import 'mixins/fonts';
+@import 'mixins/palette';
+@import 'vars/font_sizes';
+
+%heading {
+  color: palette(white);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.heading--primary {
+  @extend %heading;
+  @include font-neuzeit-regular($font_size_x_large);
+
+  @include respond(upto, mobile) {
+    font-size: $font_size_large;
+  }
+}
+
+.heading--secondary {
+  @extend %heading;
+  @include font-neuzeit-book($font_size_large);
+
+  @include respond(upto, mobile) {
+    font-size: $font_size_medium;
+  }
+}

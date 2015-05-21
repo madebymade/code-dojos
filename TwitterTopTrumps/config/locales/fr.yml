@@ -1,0 +1,57 @@
+﻿fr:
+  languages:
+    ar: 'Arabe'
+    en: 'Anglais'
+    fr: 'Français'
+    ja: 'Japonais'
+    zh: 'Chinois'
+  http_challenge: 'Accès Restreint'
+  branding:
+    header:
+      cdp: 'CDP'
+  primary_navigation:
+    areas_of_focus: "Domaine d'intervention"
+    why_disclose: 'Pourquoi participer?'
+    member_benefits: 'Avantages pour les membres'
+    data_and_reports: 'Données et publications'
+  secondary_navigation:
+    donate: 'Contribuer'
+    language: 'Langues'
+    contact: 'Contact'
+  helpers:
+    label:
+      user:
+        email: 'Email'
+        first_name: 'Prénom'
+        last_name: 'Nom de famille'
+  cdp2:
+    homepage: 'Visit CDP2'
+  users:
+    login: 'Me connecter'
+    logout: 'Déconnexion'
+    sign_up: "M'inscrire"
+    update_details: 'Mettre à jour données personnelles'
+    new_password: 'Nouveau mot de passe'
+    confirm_new_password: 'Confirmation de mot de passe'
+    change_password: 'Changer mon mot de passe'
+    password: 'Mot de passe'
+    send_reset_password_instructions: 'Envoyer les informations pour un nouveau mot de passe'
+    resend_confirmation_instructions: 'Re-envoyer les informations de confirmation'
+    resend_unlock_instructions: 'Re-envoyer les informations pour débloquer mon compte'
+    confirm_account: 'Confirmer mon compte'
+    unlock_account: 'Débloquer mon compte'
+    forgotten_password: 'Mot de passe oublié?'
+    resend_confirmation_instructions_link: "Vous n'avez pas reçu les instructions de confirmation?"
+    resend_unlock_instructions_link: "Vous n'avez pas reçu les instructions pour débloquer votre compte?"
+    login_oauth: 'Me connecter avec %{provider}'
+    password_minimum: '%{min} caractères minimum'
+    edit_details: 'Editer mes données personnelles'
+    forgot_password: 'Mot de passe oublié?'
+  home:
+    title: 'Bienvenue à CDP'
+    current_environment: 'Vous êtes dans %{env}.'
+  active_directory:
+    user: 'ActiveDirectory Info'
+  ssrs:
+    heading: 'SSRS Reports'
+    example_report: 'Exemple de rapport'

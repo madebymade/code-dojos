@@ -1,0 +1,69 @@
+﻿ja:
+  devise:
+    confirmations:
+      confirmed: 'メールアドレスを確認しました。'
+      send_instructions: 'あと数分でメールアドレス確認方法のメールが届きます。'
+      send_paranoid_instructions: 'データベース上でメールアドレスを確認できたら、数分でメールアドレス確認方法をご案内するメールを送信します。'
+    failure:
+      not_found_in_active_directory: 'ログイン失敗'
+      already_authenticated: 'すでにサインインしています'
+      inactive: 'あなたのアカウントはまだ有効化されていません。'
+      invalid: '無効な %{authentication_keys} またはパスワード'
+      locked: 'あなたのアカウントはロックされました。'
+      last_attempt: 'あと一回ログインに失敗すると、アカウントがロックされます。'
+      not_found_in_database: '無効な %{authentication_keys} またはパスワード'
+      timeout: 'あなたのセッションは期限切れになりました。このまま続けるには再度サインインしてください。'
+      unauthenticated: 'このまま続けるにはサインインまたは登録してください。'
+      unconfirmed: 'このまま続ける前にメールアドレスの確認が必要です。'
+    mailer:
+      greeting: 'こんにちは %{recipient}さん'
+      confirmation_instructions:
+        subject: '確認方法'
+        action_to_confirm_email: 'あなたのアカウントメールは下記リンクより確認できます:'
+      reset_password_instructions:
+        subject: 'パスワードのリセット方法'
+        message: 'パスワードの変更が要求されました。以下のリンクより変更手続きを行ってください。'
+        ignore_email_if_not_requested: "この要求に心当たりがない場合、本メールは無視してください。"
+        password_will_not_change: "パスワードを変更するには、上記リンクにアクセスして新しいパスワードを設定してください。"
+      unlock_instructions:
+        subject: 'ロック解除方法'
+        reason_for_lock: '既定回数以上サインインに失敗したため、あなたのアカウントはロックされました。'
+        action_to_unlock: '下記リンクをクリックしてロックを解除してください:'
+    omniauth_callbacks:
+      failure: '"%{reason}" のため %{kind} から本人確認ができませんでした。'
+      success: '%{kind} から本人確認ができました。'
+    passwords:
+      no_token: "このページにはパスワード変更メールからしかアクセスできません。パスワード変更メールからアクセスしようとしている場合、URLに間違いがないか確認してください。"
+      send_instructions: 'あと数分でご登録のメールアドレスにパスワード変更方法の案内を送信します。'
+      send_paranoid_instructions: 'データベース上でメールアドレスを確認できたら、数分でパスワード回復用リンクを送信します。'
+      updated: 'パスワードの変更は正常に完了し、サインインしました。'
+      updated_not_active: 'パスワードの変更は正常に完了しました。'
+    registrations:
+      destroyed: 'さようなら！あなたのアカウントは取り消されました。またお会いできるのを楽しみにしています。'
+      signed_up: 'ようこそ！登録が完了しました。'
+      signed_up_but_inactive: '登録は完了しました。しかし、アカウントはまだ有効化されていないためサインインできませんでした。'
+      signed_up_but_locked: '登録は完了しました。しかし、アカウントはロックされているためサインインできませんでした。'
+      signed_up_but_unconfirmed: 'ご登録のメールアドレスに確認用リンクを送信しました。確認用リンクの内容に従いアカウントを有効化してください。'
+      update_needs_confirmation: 'アカウントがアップデートされました。新しいメールアドレス確認のため、ご登録のメールアドレスに送られた確認用リンクの内容に従ってください。'
+      updated: 'アカウントがアップデートされました。'
+      confirmation_waiting: '確認中です: %{email}'
+      password_leave_blank: "変更しない場合は空欄にしておいてください"
+      password_change_requires_old_password: '変更するには現在のパスワードが必要です'
+    sessions:
+      signed_in: ''
+      signed_out: ''
+      already_signed_out: ''
+    unlocks:
+      send_instructions: '数分でロック解除方法をご案内するメールを送信します。'
+      send_paranoid_instructions: 'アカウントが確認できたら、数分でロック解除方法をご案内するメールを送信します。'
+      unlocked: 'アカウントのロック解除に成功しました。続けるにはサインインしてください。'
+  errors:
+    messages:
+      already_confirmed: 'はすでに確認されています。再度サインインしてください。'
+      confirmation_period_expired: '%{period} までに確認が必要です。再度要求してください。'
+      expired: '期限が切れました。再度要求してください。'
+      not_found: '見つかりません'
+      not_locked: 'ロックされていません'
+      not_saved:
+        one: 'エラーが1箇所見つかったため、%{resource} のセーブに失敗しました:'
+        other: '%{count} 箇所のエラーが見つかったため、%{resource} のセーブに失敗しました：'

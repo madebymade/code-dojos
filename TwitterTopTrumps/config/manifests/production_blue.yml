@@ -1,0 +1,24 @@
+---
+buildpack: https://github.com/cloudfoundry/ruby-buildpack#v1.1.3
+stack: lucid64
+
+env:
+  DATABASE_URL: 'mysql2://sslcatch_prod:rE4Y3PwBaNjawK2Q@db1-pivotalcf-made.chgtsengn3gn.us-east-1.rds.amazonaws.com:3306/sslcatch_production?pool=25'
+  RAILS_ENV: production
+  BUNDLE_WITHOUT: 'development:test:deployment'
+
+path: ../../
+
+applications:
+  - name: sslcatch-blue
+    instances: 1
+    memory: 256M
+    timeout: 180
+    command: bin/rake cf:on_first_instance db:migrate && bin/rails s -p $PORT
+
+  - name: sslcatch-blue-background
+    instances: 1
+    no-route: true
+    memory: 256M
+    timeout: 180
+    command: bin/rake jobs:work

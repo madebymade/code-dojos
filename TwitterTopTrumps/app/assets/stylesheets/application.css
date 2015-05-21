@@ -1,0 +1,9 @@
+/**
+ * SSLCatch application SCSS
+ *
+ * For more information please read the README.md in this folder.
+ *
+ *= require_tree ./shared
+ *= require_tree ./components
+ *= require_tree ./pages
+ */

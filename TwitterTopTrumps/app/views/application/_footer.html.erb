@@ -1,0 +1,9 @@
+<footer class="page__footer--global">
+  <%== t('branding.footer.powered_by', link: 'https://www.madetech.com', year: Time.now.strftime("%Y") ) %>
+
+  <div class="logo logo--made">
+    <%= link_to 'https://www.madetech.com', rel: 'author' do %>
+      <%= image_tag 'branding/made-white.png', alt: t('branding.global') %>
+    <% end %>
+  </div>
+</footer>

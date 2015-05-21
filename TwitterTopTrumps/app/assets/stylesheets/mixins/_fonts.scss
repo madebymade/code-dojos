@@ -1,0 +1,22 @@
+@mixin font-neuzeit-book($size) {
+  font-family: 'neuzeits-bookbook', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: $size;
+}
+
+@mixin font-neuzeit-regular($size) {
+  font-family: 'NeuzeitGro-Reg', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: $size;
+}
+
+@mixin font-neuzeit-bold($size) {
+  font-family: 'NeuzeitGro-Bol', Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: $size;
+}
+
+@mixin font-rendering-fix {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}

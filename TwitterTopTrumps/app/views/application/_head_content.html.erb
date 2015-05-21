@@ -1,0 +1,11 @@
+<title><%= t('page.title') %></title>
+<meta name="description" content="<%= t('page.meta_description') %>">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<meta content="none" name="msapplication-config" />
+
+<%= favicon_link_tag image_path('favicon.png') %>
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>

@@ -1,0 +1,9 @@
+@import 'compass/css3/font-face';
+
+@include font-face('NeuzeitGro-Bla', font-files('17687E_0.woff', '17687E_0.ttf'), '17687E_0.eot', normal, normal);
+@include font-face('NeuzeitGroCon-Bla', font-files('17687E_1.woff', '17687E_1.ttf'), '17687E_1.eot', normal, normal);
+@include font-face('NeuzeitGroExt-Bla', font-files('17687E_2.woff', '17687E_2.ttf'), '17687E_2.eot', normal, normal);
+@include font-face('NeuzeitGro-Lig', font-files('17687E_3.woff', '17687E_3.ttf'), '17687E_3.eot', normal, normal);
+@include font-face('neuzeits-bookbook', font-files('neuzeits_book.woff', 'neuzeits_book.ttf'), 'neuzeits_book.eot', normal, normal);
+@include font-face('NeuzeitGro-Bol', font-files('17687E_4.woff', '17687E_4.ttf'), '17687E_4.eot', normal, normal);
+@include font-face('NeuzeitGro-Reg', font-files('17687E_5.woff', '17687E_5.ttf'), '17687E_5.eot', normal, normal);

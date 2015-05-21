@@ -1,0 +1,69 @@
+﻿fr:
+  devise:
+    confirmations:
+      confirmed: 'Votre adresse email a été confirmé.'
+      send_instructions: 'Vous recevrez un email avec les instructions à suivre pour confirmer votre adresse email dans quelques minutes.'
+      send_paranoid_instructions: 'Si votre adresse email existe dans notre base de données, vous recevrez un email avec les instructions à suivre pour confirmer votre adresse email dans quelques minutes.'
+    failure:
+      not_found_in_active_directory: 'Echec de la connexion.'
+      already_authenticated: 'Vous êtes déjà connecté.'
+      inactive: "Votre compte n'est pas encore activé."
+      invalid: 'Invalide %{authentication_keys} ou mot de passe.'
+      locked: 'Votre compte est bloqué.'
+      last_attempt: 'Il vous reste un essai avant que votre compte soit bloqué.'
+      not_found_in_database: 'Invalide %{authentication_keys} ou mot de passe.'
+      timeout: 'Votre session a expiré. Veuillez vous connectez à nouveau pour continuer.'
+      unauthenticated: 'Veuillez vous connecter ou vous enregistrer avant de continuer.'
+      unconfirmed: 'Veuillez confirmer votre adresse email avant de continuer.'
+    mailer:
+      greeting: 'Bonjour %{recipient}'
+      confirmation_instructions:
+        subject: 'Instructions pour confirmation'
+        action_to_confirm_email: 'Vous pouvez confirmer votre adresse email en utilisant le lien ci-dessous:'
+      reset_password_instructions:
+        subject: 'Instructions pour réinitialiser votre de mot de passe'
+        message: "Quelqu'un a demandé un lien pour modifier votre mot de passe. Vous pouvez le changer en utilisant le lien ci-dessous."
+        ignore_email_if_not_requested: "Si vous n'avez pas demandé cette requête, veuillez ignorer cet email."
+        password_will_not_change: "Votre mot de passe ne changera pas tant que vous ne pas cliquez pas sur le lien ci-dessus pour créer un nouveau mot de passe."
+      unlock_instructions:
+        subject: 'Instructions pour débloquer votre compte'
+        reason_for_lock: "Votre compte a été bloqué en raison d'un trop grand nombre de tentatives de connexion ayant échouées."
+        action_to_unlock: 'Cliquez sur le lien ci-dessous pour débloquer votre compte:'
+    omniauth_callbacks:
+      failure: 'Impossible de vous authentifier à partir %{kind} car "%{reason}".'
+      success: 'Authentification réussie à partir de %{kind} compte.'
+    passwords:
+      no_token: "Cette page est inaccesible si vous n'avez pas reçu d'email pour réinitialiser votre mot de passe. Si vous provenez de l'email de réinitialisation du mot de passe, assurez-vous d'utiliser le lien en entier."
+      send_instructions: 'Vous recevrez un email avec les instructions à suivre pour réinitialiser votre mot de passe dans quelques minutes.'
+      send_paranoid_instructions: "Si votre adresse email existe dans notre base de données, vous recevrez un lien pour réinitialiser votre mot de passe par email d'ici quelques minutes."
+      updated: 'Votre mot de passe a bien été modifié. Vous êtes à présent connecté.'
+      updated_not_active: 'Votre mot de passe a bien été modifié.'
+    registrations:
+      destroyed: 'Au revoir! Votre compte est maintenant annulé. Nous espérons vous revoir bientôt.'
+      signed_up: 'Bienvenue! Vous êtes à présent inscrit.'
+      signed_up_but_inactive: "Vous êtes à présent inscrit. Cependant, nous n'avons pas réussi à vous connecter car votre compte n'a pas encore été activé."
+      signed_up_but_locked: "Vous êtes à présent inscrit. Cependant, nous n'avons pas réussi à vous connecter car votre compte est bloqué."
+      signed_up_but_unconfirmed: "Un email avec un lien de confirmation vous a été envoyé. Veuillez suivre le lien inclus dans l'email pour activer votre compte."
+      update_needs_confirmation: 'Votre compte a bien été mis à jour, mais nous devons vérifier votre nouvelle adresse email. Veuillez vérifier vos emails et utiliser le lien de confirmation pour confirmer votre nouvelle adresse email.'
+      updated: 'Votre compte a bien été mis à jour.'
+      confirmation_waiting: 'Actuellement en attente pour: %{email}'
+      password_leave_blank: "laissez vide si vous ne souhaitez pas le changer"
+      password_change_requires_old_password: 'nous avon besoin de votre mot de passe pour confirmer vos modifications'
+    sessions:
+      signed_in: ''
+      signed_out: ''
+      already_signed_out: ''
+    unlocks:
+      send_instructions: 'Vous recevrez un email avec les instructions à suivre pour débloquer votre compte dans quelques minutes.'
+      send_paranoid_instructions: 'Si votre compte existe, vous recevrez un email avec les instructions à suivre pour débloquer votre compte dans quelques minutes.'
+      unlocked: 'Votre compte est maintenant débloqué. Veuillez vous connecter pour continuer.'
+  errors:
+    messages:
+      already_confirmed: 'déjà confirmé, veuillez vous connecter'
+      confirmation_period_expired: 'doit être confirmé dans les %{period}, veuillez en demander un nouveau'
+      expired: 'a expiré, veuillez en demander un nouveau'
+      not_found: 'introuvable'
+      not_locked: "n'était pas bloqué"
+      not_saved:
+        one: "1 erreur empêche cette %{resource} d'être enregistrée:"
+        other: "%{count} erreurs empêchent cette %{resource} d'être enregistrée:"

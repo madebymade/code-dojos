@@ -1,0 +1,69 @@
+﻿zh:
+  devise:
+    confirmations:
+      confirmed: '您的电子邮件地址已成功确认.'
+      send_instructions: '您将在几分钟内收到一封邮件指令告知如何确认您的邮件地址.'
+      send_paranoid_instructions: '如果您的邮件地址在我们的数据库中已存在, 您将在几分钟内收到一封邮件指令告知如何确认您的邮件地址.'
+    failure:
+      not_found_in_active_directory: '登录失败'
+      already_authenticated: '您已经进行登录.'
+      inactive: '您的账户尚未激活.'
+      invalid: '无效的 %{authentication_keys} 或密码.'
+      locked: '您的账户被锁定.'
+      last_attempt: '在您的账户被锁定前您还有一次尝试机会.'
+      not_found_in_database: '无效的 %{authentication_keys} 或密码.'
+      timeout: '会话已过期. 请再次登录并继续.'
+      unauthenticated: '需要登录或注册后再继续.'
+      unconfirmed: '需要确认邮件地址后再继续.'
+    mailer:
+      greeting: '您好 %{recipient}'
+      confirmation_instructions:
+        subject: '确认指令'
+        action_to_confirm_email: '您可以通过以下链接确认您的邮件账户:'
+      reset_password_instructions:
+        subject: '重设密码指令'
+        message: '有人要求发送更改您的密码的链接. 您可以通过下述链接进行操作.'
+        ignore_email_if_not_requested: "如果您未提出这条要求, 请忽略这封邮件."
+        password_will_not_change: "在您进入上述链接设置新的密码之前，您的密码不会改变."
+      unlock_instructions:
+        subject: '解锁指令'
+        reason_for_lock: '因为多次大量不成功的登录尝试您的账户已被锁定.'
+        action_to_unlock: '点击下面的链接以解锁您的账户:'
+    omniauth_callbacks:
+      failure: '无法通过 %{kind}进行确认 因为 "%{reason}".'
+      success: '通过 %{kind}账户成功确认.'
+    passwords:
+      no_token: "如果未收到密码重设邮件那么您不能进入该页面. 如果您已收到密码重设邮件, 那么请确保您使用了完整的URL链接."
+      send_instructions: '您将在几分钟内收到一封邮件指令告知如何重设密码.'
+      send_paranoid_instructions: '如果您的邮件地址在我们的数据库中已存在, 您将在几分钟内收到一封包含密码恢复链接的邮件.'
+      updated: '您的密码已更改成功. 目前您已登录.'
+      updated_not_active: '您的密码已更改成功.'
+    registrations:
+      destroyed: '再见! 您的账户已成功取消. 我们期待您的再次访问.'
+      signed_up: '欢迎! 您已经成功注册.'
+      signed_up_but_inactive: '您已经成功注册. 但是, 目前您还不能登录因为您的账户尚未激活.'
+      signed_up_but_locked: '您已经成功注册. 但是, 目前您还不能登录因为您的账户被锁定.'
+      signed_up_but_unconfirmed: '一条包含确认链接的信息已经发送到您的邮件账户. 请通过该链接激活您的账户.'
+      update_needs_confirmation: '您已经成功更新了账户信息, 但是我们需要核实您的新邮件地址. 请检查您的邮件并通过确认链接来确认您的新邮件地址.'
+      updated: '您的账户信息已更新成功.'
+      confirmation_waiting: '目前正在等待: %{email}确认'
+      password_leave_blank: "如果您不想变更该信息请留白"
+      password_change_requires_old_password: '我们需要您提供当前的密码来确认您的更改'
+    sessions:
+      signed_in: ''
+      signed_out: ''
+      already_signed_out: ''
+    unlocks:
+      send_instructions: '您将在几分钟内收到一封邮件指令告知如何解锁您的账户.'
+      send_paranoid_instructions: '如果您的账户已经存在, 您将在几分钟内收到一封邮件指令告知如何解锁.'
+      unlocked: '您的账户已经成功解锁. 请登录并继续.'
+  errors:
+    messages:
+      already_confirmed: '已经确认, 请尝试登录'
+      confirmation_period_expired: '需要在 %{period}内确认, 请重新发送请求'
+      expired: '已过期, 请重新发送请求'
+      not_found: '未找到'
+      not_locked: '未被锁定'
+      not_saved:
+        one: '发现1个错误 %{resource} 未被保存:'
+        other: '%{count}错误 %{resource} 未被保存:'

@@ -1,0 +1,21 @@
+$break_mobile--max: 767px;
+$break_tablet--min: $break_mobile--max + 1;
+$break_tablet--max: 959px;
+$break_desktop--min: $break_tablet--max + 1;
+$break_desktop--max: 1200px;
+
+$breakpoints: (
+  from: (
+    tablet: min-width $break_tablet--min,
+    desktop: min-width $break_desktop--min,
+  ),
+  upto: (
+    mobile: max-width $break_mobile--max,
+    tablet: max-width $break_tablet--max,
+    desktop: max-width $break_desktop--max,
+  ),
+  vertical: (
+    short: max-height 750px
+  )
+);
+

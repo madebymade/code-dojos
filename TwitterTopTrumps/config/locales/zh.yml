@@ -1,0 +1,57 @@
+﻿zh:
+  languages:
+    ar: '阿拉伯语'
+    en: '英语'
+    fr: '法语'
+    ja: '日本'
+    zh: '中国'
+  http_challenge: '访问限制'
+  branding:
+    header:
+      cdp: 'CDP'
+  primary_navigation:
+    areas_of_focus: '重点领域'
+    why_disclose: '为何披露?'
+    member_benefits: '会员福利'
+    data_and_reports: '数据和报告'
+  secondary_navigation:
+    donate: '捐赠'
+    language: '语言'
+    contact: '联系人'
+  helpers:
+    label:
+      user:
+        email: '电子邮件'
+        first_name: '名字'
+        last_name: '姓'
+  cdp2:
+    homepage: '查看 CDP2'
+  users:
+    login: '登录'
+    logout: '退出'
+    sign_up: '注册'
+    update_details: '更新细节'
+    new_password: '新密码'
+    confirm_new_password: '确认新密码'
+    change_password: '变更密码'
+    password: '密码'
+    send_reset_password_instructions: '发送重设密码指令'
+    resend_confirmation_instructions: '重新发送确认指令'
+    resend_unlock_instructions: '重新发送账户解锁指令'
+    confirm_account: '确认我的账户'
+    unlock_account: '解锁我的账户'
+    forgotten_password: '忘记密码?'
+    resend_confirmation_instructions_link: "未收到确认指令?"
+    resend_unlock_instructions_link: "未收到解锁指令?"
+    login_oauth: '通过 %{provider}登录'
+    password_minimum: '%{min} 最少字节'
+    edit_details: '编辑细节'
+    forgot_password: '忘记密码?'
+  home:
+    title: '欢迎访问 CDP'
+    current_environment: '目前您的位置在 %{env}.'
+  active_directory:
+    user: '有效目录信息'
+  ssrs:
+    heading: 'SSRS 报告'
+    example_report: '报告样本'

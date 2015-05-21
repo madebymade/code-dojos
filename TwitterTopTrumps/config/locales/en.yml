@@ -1,0 +1,9 @@
+en:
+  branding:
+    logo: 'Twitter Top Trumps'
+    global: 'Made Tech'
+    footer:
+      powered_by: 'Powered by <a href="%{link}">Made Tech</a> • %{year} • All rights reserved'
+  page:
+    title: 'Twitter Top Trumps'
+    meta_description: 'Pit your Twitter followers against a rival to see whose following is more powerful!'

@@ -1,0 +1,12 @@
+@import 'compass/css3/transition';
+
+@mixin transition-color($color-from, $color-to) {
+  @include transition(color, .2s);
+
+  color: $color-from;
+
+  &:hover,
+  &:focus {
+    color: $color-to;
+  }
+}

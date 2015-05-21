@@ -1,0 +1,39 @@
+<div class="flash_messages">
+  <% %i(notice alert success error).each do |flash_type| %>
+    <% if flash[flash_type].present? %>
+      <div class="flash_messages__message--<%= flash_type %>">
+        <div class="flash_messages__message_inner">
+          <% if flash[flash_type].is_a?(Hash) %>
+            <div class="flash_messages__message_title">
+              <%= flash[flash_type]['title'] %>
+            </div>
+
+            <div class="flash_messages__message_content">
+              <% if flash[flash_type]['content'].respond_to?(:each) %>
+                <ul>
+                  <% flash[flash_type]['content'].each do |content| %>
+                    <li>
+                      <%= content[0] %>
+                    </li>
+                  <% end %>
+                </ul>
+              <% else %>
+                <%= flash[flash_type]['content'] %>
+              <% end %>
+            </div>
+
+            <% if flash[flash_type]['cta'].present? %>
+              <div class="flash_messages__message_cta">
+                <%= link_to flash[flash_type]['cta']['text'], flash[flash_type]['cta']['path'] %>
+              </div>
+            <% end %>
+          <% else %>
+            <div class="flash_messages__message_title">
+              <%= flash[flash_type] %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
