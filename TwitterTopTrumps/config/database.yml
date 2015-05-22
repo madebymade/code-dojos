@@ -8,16 +8,8 @@ mysql: &mysql
 
 development:
   <<: *mysql
-  database: sslcatch_development
+  database: ttt_development
 
 test: &test
   <<: *mysql
-  database: sslcatch_test
-
-production:
-  <<: *mysql
-  host: db1-pivotalcf-made.chgtsengn3gn.us-east-1.rds.amazonaws.com
-  username: sslcatch_prod
-  password: rE4Y3PwBaNjawK2Q
-  database: sslcatch_production
-  pool: 25
+  database: ttt_test

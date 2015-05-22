@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module SSLCatch
+module TwitterTopTrumps
   class Application < Rails::Application
     config.to_prepare do
       Dir[Rails.root.join('{app,lib}/**/*_decorator*.rb')].each do |c|
@@ -24,8 +24,8 @@ module SSLCatch
     config.force_ssl = true
 
     config.http_auth = { enabled: false,
-                         username: 'sslcatch',
-                         password: 'coolkids' }
+                         username: 'ttt',
+                         password: 'ttt' }
 
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.smtp_settings =

@@ -1,0 +1,11 @@
+TwitterAPI.txt
+
+Consumer Key (API Key):        bm2xxIc1AurhDxAEchLOAelUc
+Consumer Secret (API Secret):  jQ8kiPIsXwhpMnPBx4mqZTis0QdZ4o1yV5O3gPBXt7rPkFn8JW
+
+
+Access Token:                  18778314-gZWisVGXffyeNZiUwCp9wUGu4CnqVfSnC2I7dZ4rd
+Access Token Secret:           yVAbxTQjFbQZmdHe2cARobqg2R42oh4Js70OLOYxiB6p4
+
+Owner madebymade
+Owner ID 18778314
