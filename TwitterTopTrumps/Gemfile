@@ -28,6 +28,7 @@ gem 'unf',                            '0.1.4'
 gem 'rb-readline'
 
 group :development, :test do
+  gem 'dotenv-rails',                 '~> 2.0.0'
   gem 'scss-lint',                    '~> 0.37.0'
 end
 
