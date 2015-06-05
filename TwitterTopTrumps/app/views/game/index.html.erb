@@ -1,0 +1,7 @@
+<h1>Twitter Top Trumps!</h1>
+
+<%= form_tag play_game_path do |f| %>
+  <%= text_field_tag :player1 %>
+  <%= text_field_tag :player2 %>
+  <%= submit_tag 'Play!' %>
+<% end %>
