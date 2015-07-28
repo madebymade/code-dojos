@@ -22,17 +22,24 @@
 
 # Part 4 (24/04/2015)
 
-### Holdovers from previous dojos
-
 - Randomly generate obstacles
 
-### New features
+- Add collectible items.
 
-- Add collectible items that update a score when the player picks them up.
+# Part 5 (??/??/2015)
+
+### Holdover from previous dojo
+
+- Have the collectible items actually be collectible
+
+- When collectibles are collected, increase player score by 100 points
+
+### New features
 
 - Add a "win" tile that we can place, and which triggers a Game Over (success) event when the player reaches it.
 
 ### Upon completion of the above
+####(i.e. in future dojos)
 
 - Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player).
 
