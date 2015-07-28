@@ -1,4 +1,8 @@
-INVALID_COMBINATIONS = [['Chicken', 'Corn'], ['Fox', 'Chicken']];
+INVALID_COMBINATIONS = [
+  ['Chicken', 'Corn'],
+  ['Fox', 'Chicken'],
+  ['Corn', 'Fox', 'Chicken']
+];
 
 var arraysEqual = function(arr1, arr2) {
   if (arr1.length !== arr2.length) return false;

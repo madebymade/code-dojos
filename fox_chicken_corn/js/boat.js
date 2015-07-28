@@ -4,30 +4,46 @@ window.Boat = function(left_bank, right_bank) {
 };
 
 Boat.prototype.move = function(passenger) {
-  var voyage = this.voyage(passenger);
-  var idx = startBank.indexOf(passenger);
+  var voyage = this.voyage();
   if (this.validateMove(voyage, passenger)) {
-    startBank.shift(idx, 1);
-    this.right_bank.push(passenger);
+    return this.transport(voyage[0], voyage[1], passenger);
+  } else {
+    return false;
   }
 }
 
-Boat.prototype.validateMove = function(voyage, passenger) {
-  candidate_left_bank = cloneArray(this.left_bank);
-  candidate_right_bank = cloneArray(this.right_bank);
+Boat.prototype.transport = function(source, destination, passenger) {
+  var idx = source.indexOf(passenger);
+  var man_idx = source.indexOf('Man');
 
-  source = voyage[0];
-  destination = voyage[1];
+  if (idx === -1 || man_idx === -1) {
+    return false;
+  }
 
-  return validator(candidate_left_bank) &&
-         validator(candidate_right_bank);
+  source.splice(idx, 1);
+  destination.push(passenger);
+
+  source.splice(man_idx, 1);
+  destination.push('Man');
+
+  return true;
 }
 
-Boat.prototype.voyage = function(passenger){
-  if (this.left_bank.indexOf(passenger) >= 0)
+Boat.prototype.validateMove = function(voyage, passenger) {
+  var candidate_source = cloneArray(voyage[0]);
+  var candidate_destination = cloneArray(voyage[1]);
+
+  this.transport(candidate_source, candidate_destination, passenger)
+
+  return validator(candidate_source) &&
+         validator(candidate_destination);
+}
+
+Boat.prototype.voyage = function() {
+  if (this.left_bank.indexOf('Man') >= 0)
     return [this.left_bank, this.right_bank];
 
-  if (this.right_bank.indexOf(passenger) >= 0)
+  if (this.right_bank.indexOf('Man') >= 0)
     return [this.right_bank, this.left_bank];
 }
 
