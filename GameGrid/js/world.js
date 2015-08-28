@@ -8,6 +8,7 @@ function createWorld(width, height){
   }
 
   world = placeRandomWorldObstacles(world);
+  world = placeWinningSquare(world);
   return placeRandomWorldCollectables(world);
 }
 
@@ -16,11 +17,16 @@ function randomCoordinate(axis) {
 }
 
 function placeRandomWorldObstacles(world) {
-  positions = RandomPositionsInWorld(10, 1);
+  positions = RandomPositionsInWorld(50, 1);
   for (var i = 0; i < positions.length; i++) {
     world[positions[i]['y']][positions[i]['x']] = 1;
   }
 
+  return world;
+}
+
+function placeWinningSquare(world) {
+  world[24][24] = 3;
   return world;
 }
 
@@ -41,13 +47,7 @@ window.boundaries = {
 };
 
 function drawPlayerCell(context, x, y) {
-  var image = new Image();
-
-  image.onload = function () {
-    context.drawImage(image, x * window.cell_dimensions.width, y * window.cell_dimensions.height, window.cell_dimensions.width, window.cell_dimensions.height)
-  }
-
-  image.src = 'img/player.jpg';
+  drawImageCell(context, x, y, 'img/player.jpg');
 }
 
 function drawWorld(context, player, world) {
@@ -60,6 +60,9 @@ function drawWorld(context, player, world) {
         case 2:
           drawCollectableCell(context, x, y);
           break;
+        case 3:
+          drawWinningCell(context, x, y);
+          break;
         default:
           drawBackgroundCell(context, x, y);
       }
@@ -70,19 +73,36 @@ function drawWorld(context, player, world) {
 }
 
 function drawBackgroundCell(context, x, y) {
-  drawCell(context, x, y, "#00FF00");
+  drawCell(context, x, y, "#000000");
 }
 
 function drawObstacleCell(context, x, y) {
-  drawCell(context, x, y, "#FF0000");
+  drawImageCell(context, x, y, 'img/obstacle.jpg');
 }
 
 function drawCollectableCell(context, x, y) {
-  drawCell(context, x, y, "#0000FF");
+  drawImageCell(context, x, y, 'img/collectable.png');
+}
+
+function drawWinningCell(context, x, y) {
+  drawImageCell(context, x, y, 'img/winning.jpg');
+}
+
+function drawImageCell(context, x, y, source_image) {
+  var image = new Image();
+
+  image.onload = function () {
+    context.drawImage(image,
+                      x * window.cell_dimensions.width,
+                      y * window.cell_dimensions.height,
+                      window.cell_dimensions.width,
+                      window.cell_dimensions.height)
+  }
+
+  image.src = source_image;
 }
 
 function drawCell(context, x, y, color) {
-
   context.fillStyle = color;
 
   context.fillRect(x * cell_dimensions.width,
@@ -101,16 +121,43 @@ function constrainBoundaries(world, player, x, y) {
 }
 
 function canMove(world, player, x, y) {
-  world_tile_x = player.x + x;
-  world_tile_y = player.y + y;
+  var world_tile_x = player.x + x,
+      world_tile_y = player.y + y;
 
   if (isOutsideBoundary(world, world_tile_x, world_tile_y)) {
     return false;
   }
+
   if (isObstacle(world, world_tile_x, world_tile_y)) {
     return false;
   }
+
+  if (isCollectable(world, world_tile_x, world_tile_y)) {
+    player.pickUp({ points: 100 });
+    removeCollectable(world, world_tile_x, world_tile_y);
+    return true;
+  }
+
+  if (isWinningCell(world, world_tile_x, world_tile_y)) {
+    $('body').html('<h1 id="game-over">Game Over</h1>' +
+                   '<h2 id="player-score">You scored: ' + player.score + '</h2>' +
+                   '<a href="#" onclick="window.location = window.location; return false">restart</a>');
+    return true;
+  }
+
   return true;
+}
+
+function removeCollectable(world, x, y) {
+  world[y][x] = 0;
+}
+
+function isWinningCell(world, x, y) {
+  return world[y][x] == 3;
+}
+
+function isCollectable(world, x, y) {
+  return world[y][x] == 2;
 }
 
 function isObstacle(world, x, y) {

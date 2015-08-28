@@ -26,7 +26,7 @@
 
 - Add collectible items.
 
-# Part 5 (??/??/2015)
+# Part 5 (28/08/2015)
 
 ### Holdover from previous dojo
 
@@ -41,7 +41,7 @@
 ### Upon completion of the above
 ####(i.e. in future dojos)
 
-- Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player).
+- Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player) (A*?).
 
 - Add the concept of "lives" to the player, and have the player start with three. A player loses a life if an enemy occupies the same square as they player.
 
