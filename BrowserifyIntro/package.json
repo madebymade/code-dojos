@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "browserify": "^11.1.0",
+    "browserify-incremental": "^3.0.1"
+  }
+}
