@@ -13,3 +13,5 @@ group :development, :test do
   gem 'pry'
   gem 'spring'
 end
+
+gem 'browserify-rails'
