@@ -1,5 +1,10 @@
 window.cell_dimensions = {'width': 32, 'height': 32};
 window.cell_count = {'x': 25, 'y': 25};
+var ENEMY = 4;
+var OBSTACLE = 1;
+var COLLECTABLE = 2;
+var WINNING_SQUARE = 3;
+
 
 function createWorld(width, height){
   var world = [];
@@ -7,33 +12,26 @@ function createWorld(width, height){
     world.push(new Array(width));
   }
 
-  world = placeRandomWorldObstacles(world);
+  world = placeEntityInWorld(world, OBSTACLE, 50);
   world = placeWinningSquare(world);
-  return placeRandomWorldCollectables(world);
+  world = placeEntityInWorld(world, COLLECTABLE, 10);
+  world = placeEntityInWorld(world, ENEMY, 1);
+  return world;
 }
 
 function randomCoordinate(axis) {
   return Math.floor(Math.random() * window.cell_count[axis]);
 }
 
-function placeRandomWorldObstacles(world) {
-  positions = RandomPositionsInWorld(50, 1);
-  for (var i = 0; i < positions.length; i++) {
-    world[positions[i]['y']][positions[i]['x']] = 1;
-  }
-
-  return world;
-}
-
 function placeWinningSquare(world) {
-  world[24][24] = 3;
+  world[24][24] = WINNING_SQUARE;
   return world;
 }
 
-function placeRandomWorldCollectables(world) {
-  positions = RandomPositionsInWorld(10, 1);
+function placeEntityInWorld(world, entity, amount) {
+  positions = RandomPositionsInWorld(amount, 1);
   for (var i = 0; i < positions.length; i++) {
-    world[positions[i]['y']][positions[i]['x']] = 2;
+    world[positions[i]['y']][positions[i]['x']] = entity;
   }
 
   return world;
@@ -50,17 +48,18 @@ function drawPlayerCell(context, x, y) {
   drawImageCell(context, x, y, 'img/player.jpg');
 }
 
+
 function drawWorld(context, player, world) {
   for (var y = 0; y < world.length; y++) {
     for (var x = 0; x < world[y].length; x++) {
       switch (world[y][x]) {
-        case 1:
+        case OBSTACLE:
           drawObstacleCell(context, x, y);
           break;
-        case 2:
+        case COLLECTABLE:
           drawCollectableCell(context, x, y);
           break;
-        case 3:
+        case WINNING_SQUARE:
           drawWinningCell(context, x, y);
           break;
         default:
@@ -69,7 +68,14 @@ function drawWorld(context, player, world) {
     }
   }
 
+  drawEnemies(context, world.enemies);
   drawPlayerCell(context, player.x, player.y);
+}
+
+function drawEnemies(context, enemies) {
+  enemies.forEach(function(enemy) {
+    drawEnemyCell(context, enemy.x, enemy.y);
+  });
 }
 
 function drawBackgroundCell(context, x, y) {
@@ -86,6 +92,10 @@ function drawCollectableCell(context, x, y) {
 
 function drawWinningCell(context, x, y) {
   drawImageCell(context, x, y, 'img/winning.jpg');
+}
+
+function drawEnemyCell(context, x, y) {
+  drawImageCell(context, x, y, 'img/enemy.jpg');
 }
 
 function drawImageCell(context, x, y, source_image) {
@@ -139,13 +149,22 @@ function canMove(world, player, x, y) {
   }
 
   if (isWinningCell(world, world_tile_x, world_tile_y)) {
-    $('body').html('<h1 id="game-over">Game Over</h1>' +
-                   '<h2 id="player-score">You scored: ' + player.score + '</h2>' +
-                   '<a href="#" onclick="window.location = window.location; return false">restart</a>');
+    showGameOver('Wow, you won!', player.score);
+    return true;
+  }
+
+  if (isEnemy(world, world_tile_x, world_tile_y)) {
+    showGameOver('Wow, you died!', player.score);
     return true;
   }
 
   return true;
+}
+
+function showGameOver(message, score) {
+  $('body').html('<h1 id="game-over">' + message + '</h1>' +
+                 '<h2 id="player-score">You scored:' + score + '</h2>' +
+                 '<a href="#" onclick="window.location = window.location; return false">restart</a>');
 }
 
 function removeCollectable(world, x, y) {
@@ -153,15 +172,19 @@ function removeCollectable(world, x, y) {
 }
 
 function isWinningCell(world, x, y) {
-  return world[y][x] == 3;
+  return world[y][x] == WINNING_SQUARE;
+}
+
+function isEnemy(world, x, y) {
+  return world[y][x] == ENEMY;
 }
 
 function isCollectable(world, x, y) {
-  return world[y][x] == 2;
+  return world[y][x] == COLLECTABLE;
 }
 
 function isObstacle(world, x, y) {
-  return world[y][x] == 1;
+  return world[y][x] == OBSTACLE;
 }
 
 function isOutsideBoundary(world, x, y) {
@@ -180,7 +203,12 @@ function isOutsideBoundary(world, x, y) {
   return false;
 }
 
+function moveEnemies(world) {
+
+}
+
 function move(world, player, xDelta, yDelta) {
+  moveEnemies(world);
   return constrainBoundaries(world, player, xDelta, yDelta);
 }
 
@@ -198,8 +226,4 @@ function RandomPositionsInWorld(limit) {
     coords.push({ x: randomCoordinate('x'), y: randomCoordinate('y') });
   }
   return coords;
-}
-
-function RandomTileGenerator(world, tile_type, amount) {
-
 }

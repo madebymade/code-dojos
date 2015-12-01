@@ -28,20 +28,18 @@
 
 # Part 5 (28/08/2015)
 
-### Holdover from previous dojo
-
 - Have the collectible items actually be collectible
 
 - When collectibles are collected, increase player score by 100 points
 
-### New features
-
 - Add a "win" tile that we can place, and which triggers a Game Over (success) event when the player reaches it.
+
+# Part 6
+
+- Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player) (A*?).
 
 ### Upon completion of the above
 ####(i.e. in future dojos)
-
-- Add enemies that chase the player to a certain degree (their starting positions must not clash with obstacles or the player) (A*?).
 
 - Add the concept of "lives" to the player, and have the player start with three. A player loses a life if an enemy occupies the same square as they player.
 

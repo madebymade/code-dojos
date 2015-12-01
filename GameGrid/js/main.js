@@ -7,6 +7,7 @@ $(document).ready(function () {
   drawWorld(context, player, world);
 
   $(window).keydown(function (e) {
+
     switch (e.which) {
       case 37: // left
       case 97: // a
@@ -32,16 +33,3 @@ $(document).ready(function () {
     drawWorld(context, player, world);
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-

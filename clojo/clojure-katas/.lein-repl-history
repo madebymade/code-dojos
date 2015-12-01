@@ -1,0 +1,5 @@
+exit
+(<= (Math/abs angle) 0.1)
+(def angle 90)
+(<= (Math/abs angle) 0.1)
+exit
