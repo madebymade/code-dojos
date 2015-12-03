@@ -1,13 +1,15 @@
+# Clojo
+
+Made's foray into clojure dojos.
+
 ## Setting up Clojure
 
-- Grab the relevant JVM from [here](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and install.
+- Grab the relevant JVM from [here][jvm-download] and install.
+- `brew install leiningen boot-clj`
 
-- `brew install leiningen`
+[jvm-download]: (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-- for the sake of this dojo, `git clone https://github.com/marshallshen/clojure-katas.git`
+## Simple exercises
 
-- `cd clojure-katas`
-
-- `lein repl`
-
-
+- `cd simple`
+- `boot watch speak test`
