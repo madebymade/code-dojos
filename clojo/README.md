@@ -13,3 +13,7 @@ Made's foray into clojure dojos.
 
 - `cd simple`
 - `boot watch speak test`
+
+Now try implementing anything you find here:
+
+- https://github.com/marshallshen/clojure-katas/tree/master/src/clojure_katas
